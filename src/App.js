@@ -10,18 +10,11 @@ class App extends Component {
       names: ['Tyler', 'Adam', 'Sally']
     };
     this.addName = this.addName.bind(this);
-    this.updateNewName = this.updateNewName.bind(this);
   }
 
   addName() {
     this.setState({
       names: [...this.state.names, this.state.newName]
-    });
-  }
-
-  updateNewName(e) {
-    this.setState({
-      newName: e.target.value
     });
   }
 
@@ -42,7 +35,8 @@ class App extends Component {
           <ul>
             {this.state.names.map(e => <li>{e}</li>)}
           </ul>
-          Type your new name: <input onChange={this.updateNewName} value={this.state.newName} />
+          Type your new name:
+          <input onChange={e => this.setState({ newName: e.target.value })} value={this.state.newName} />
           <button onClick={this.addName}>Add name</button>
         </div>
       </div>
