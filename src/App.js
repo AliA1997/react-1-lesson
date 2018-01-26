@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Calendar from './Calendar';
 
 class App extends Component {
   constructor() {
@@ -38,6 +39,10 @@ class App extends Component {
           Type your new name:
           <input onChange={e => this.setState({ newName: e.target.value })} value={this.state.newName} />
           <button onClick={this.addName}>Add name</button>
+          <Calendar />
+          <Calendar />
+          <Calendar />
+          <Calendar />
         </div>
       </div>
     );
